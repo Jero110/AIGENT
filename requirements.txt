@@ -1,5 +1,6 @@
-base64
-requests
-BeautifulSoup
-streamlit
-pandas
+streamlit>=1.10.0
+pandas>=1.3.0
+beautifulsoup4>=4.9.3
+requests>=2.25.1
+base64>=1.0.0
+Pillow>=8.0.0  # For image handling
