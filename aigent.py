@@ -5,6 +5,7 @@ import streamlit as st
 import pandas as pd
 
 # Function to encode the header image
+st.set_page_config(layout="wide")
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -59,12 +60,12 @@ def scrape_etf_data(url):
                 symbol = cells[1].text.strip()  # Symbol
                 name = cells[2].text.strip()    # Name of the company
                 weight = cells[3].text.strip()  # Weight percentage
-
+                shares = cells[4].text.strip()  # Weight percentage
                 # Append to stock data list
-                stock_data.append([symbol, name, weight])
+                stock_data.append([symbol, name, weight, shares])
 
         # Create a pandas DataFrame for better table formatting
-        df = pd.DataFrame(stock_data, columns=["Symbol", "Name", "% Weight"])
+        df = pd.DataFrame(stock_data, columns=["Symbol", "Name", "% Weight", "Shares"])
 
         # Return the DataFrame
         return df
