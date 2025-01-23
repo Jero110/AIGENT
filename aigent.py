@@ -168,7 +168,7 @@ elif page == "Stock Analyzer":
             try:
                 # Run the analyze function and display the result
                 analysis_output = analyze(final_ticker)
-                st.text_area("Stock Analysis Output", analysis_output, height=400)
+                st.markdown(analysis_output, unsafe_allow_html=True)
             except Exception as e:
                 st.error(f"An error occurred during the analysis: {str(e)}")
         else:
